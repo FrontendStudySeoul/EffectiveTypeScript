@@ -73,6 +73,7 @@ function welcome(str: string) {
 3. 함수 `welcome`을 선언하는 문
 
 ![](https://velog.velcdn.com/images/dohun31/post/aac194c5-9298-4df9-a27f-1afab4d32996/image.gif)
+
 각 문들을 chunck 단위로 나누고 추상구문트리로 표현한다.
 ![](https://velog.velcdn.com/images/dohun31/post/63be7b5b-0ded-49ca-a49d-1a5a623f7f3d/image.png)
 
@@ -122,8 +123,9 @@ function getElement(elOrId: string | HTMLElement | null): HTMLElement {
 
 현재 3개의 **flow container**가 생겼다.
 
-첫번째 if 분기 내부의 `elOrId`의 타입을 알기 위해 bottom-up 방식으로 추적한다.
-제일 먼저 만나는 **flow condition**을 통해서 `elOrId`의 타입이 ` HTMLElement | null`인것을 알게 되었고, 해당 **flow container** 내부에서 `elOrId`의 타입은 ` HTMLElement | null`이 된다.
+첫번째 if 분기 내부의 `elOrId`의 타입을 알기 위해 bottom-up 방식으로 추적한다.  
+제일 먼저 만나는 **flow condition**을 통해서 `elOrId`의 타입이 ` HTMLElement | null`인것을 알게 되었고,  
+해당 **flow container** 내부에서 `elOrId`의 타입은 ` HTMLElement | null`이 된다.
 
 ## 아이템8. 타입 공간과 값 공간의 심벌 구분하기
 
