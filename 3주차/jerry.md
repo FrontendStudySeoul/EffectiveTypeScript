@@ -60,15 +60,6 @@ interface ArrayLike<T> {
 
 <br />
 
-### 함수 매개변수를 readonly로 선언하면 벌어지는 일
-
-- 매개변수가 함수 내에서 변경이 일어나는지 체크한다.
-- 함수를 호출하는 쪽에서 함수가 매개변수를 변경하지 않음을 보장할 수 있다.
-- 호출하는 쪽에서 함수에 readonly 배열을 매개변수로 넣을 수도 있다.
-- 그러므로 함수가 매개변수를 변경하지 않는다면 명시적으로 readonly로 선언하는 것이 좋다.
-
-<br />
-
 ### const와 readonly의 차이점
 
 - const
@@ -183,6 +174,8 @@ const dog: DogInfo = {
 };
 ```
 
+<br />
+
 - in 연산자를 사용해 특정 타입을 기반으로 새로운 타입 생성하기(키를 유니온 타입으로 가진 경우)
 
 ```typescript
@@ -198,6 +191,8 @@ type UserInfoMappedType = {
   }
 */
 ```
+
+<br />
 
 - 제네릭을 활용한 경우
 
@@ -220,6 +215,8 @@ type UserInfoMappedType = Info<UserInfo>;
   }
  */
 ```
+
+<br />
 
 - 템플릿 리터럴을 활용해 매핑된 타입의 키를 다시 매핑하기
 
@@ -266,6 +263,8 @@ type Listeners<Type> = {
   }
 */
 ```
+
+<br />
 
 - Mapping Modifiers
 - 매핑 중에 추가할 수 있는 Modifiers는 readonly와 ?가 존재한다.
@@ -315,21 +314,26 @@ type User = Concrete<MaybeUser>;
 */
 ```
 
+<br />
+
 ## 아이템 19. 추론 가능한 타입을 사용해 장황한 코드 방지하기
 
 - 모든 변수나 함수의 반환 값에 타입을 선언하는 것은 비생산적이다.
 - 기본값이 있는 경우 추론 타입을 활용하자.
 - 비구조화 할당문은 모든 지역 변수의 타입이 추론되도록 한다.
 - 때로는 타입스크립트가 스스로 타입을 판단하기 어려울 수 있으며 이때 명시적 타입 구문을 사용한다.
+
   - logProduct 함수에서 매개변수 타입을 명시적으로 선언한 이유가 그 예이다.
 
-```typescript
-function logProduct(product: Product) {
-  // id, name, price 값에 대해 타입을 따로 지정하지 않아도 됨
-  const { id, name, price } = product;
-  console.log(id, name, price);
-}
-```
+    ```typescript
+    function logProduct(product: Product) {
+      // id, name, price 값에 대해 타입을 따로 지정하지 않아도 됨
+      const { id, name, price } = product;
+      console.log(id, name, price);
+    }
+    ```
+
+<br />
 
 ## 아이템 20. 다른 타입에는 다른 변수 사용하기
 
@@ -347,47 +351,40 @@ function logProduct(product: Product) {
 
 1. 명시적 타입 구문
 
-```typescript
-const v: { x: 1 | 3 | 5 } = {
-  x: 1,
-}; // Type is { x: 1 | 3 | 5; }
-```
+   ```typescript
+   const v: { x: 1 | 3 | 5 } = {
+     x: 1,
+   }; // Type is { x: 1 | 3 | 5; }
+   ```
 
 2. 타입 체커에 추가적인 문맥을 제공하기(아이템 26 참고)
 
-- 예를 들어 함수의 매개변수로 값을 전달하는 방법
+   - 예를 들어 함수의 매개변수로 값을 전달하는 방법
 
 3. const 단언문
 
-- const 단언문은 변수에 쓰이는 let, const와는 다르다.
-- 값 뒤에 as const를 작성하면, 최대한 좁은 타입으로 추론된다.
-- 객체에 as const를 작성하면 객체의 모든 속성이 readonly 속성으로 변환된다.
+   - const 단언문은 변수에 쓰이는 let, const와는 다르다.
+   - 값 뒤에 as const를 작성하면, 최대한 좁은 타입으로 추론된다.
+   - 객체에 as const를 작성하면 객체의 모든 속성이 readonly 속성으로 변환된다.
 
-```typescript
-const v1 = {
-  x: 1,
-  y: 2,
-}; // Type is { x: number; y: number; }
+   ```typescript
+   const v1 = {
+     x: 1 as const,
+     y: 2,
+   }; // Type is { x: 1; y: number; }
 
-const v2 = {
-  x: 1 as const,
-  y: 2,
-}; // Type is { x: 1; y: number; }
+   const v2 = {
+     x: 1,
+     y: 2,
+   } as const; // Type is { readonly x: 1; readonly y: 2; }
 
-const v3 = {
-  x: 1,
-  y: 2,
-} as const; // Type is { readonly x: 1; readonly y: 2; }
-
-const a1 = [1, 2, 3]; // Type is number[]
-const a2 = [1, 2, 3] as const; // Type is readonly [1, 2, 3]
-```
+   const a1 = [1, 2, 3]; // Type is number[]
+   const a2 = [1, 2, 3] as const; // Type is readonly [1, 2, 3]
+   ```
 
 <br />
 
 ## 아이템 22. 타입 좁히기
-
-### 분기문을 이용한 방법
 
 - 타입스크립트는 조건문에서 타입을 좁히는데 능숙하다.
 - instanceof를 사용해 타입을 좁힐 수 있다.
@@ -440,7 +437,3 @@ const a2 = [1, 2, 3] as const; // Type is readonly [1, 2, 3]
       .filter((x): x is string => x !== undefined);
     // Type is string[]
     ```
-
-```
-
-```
