@@ -99,3 +99,47 @@ const [hasDates, setHasDates] = useState<boolean>(false)
   console.log(korea.start)
   //만약 hasDates가 false라면 korea.start는 undefined를 내뱉습니다.
 ```
+
+
+### 실전 적용
+그럼 우리가 타입스크립트에서 객체를 직접 선언해야하는 경우는 언제일까요 ?
+<br>
+<br>
+```tsx
+interface ServerWant {
+    toGive: { name: string; age: number; isDeveloper: boolean }
+  }
+
+  interface ServerGive {
+    result: { region: string; isGood: boolean }
+  }
+
+  const getData = (input: ServerWant): Promise<ServerGive> => {
+    const data = fetch(`https://velog.io/@endmoseung?input=${input}`).then(
+      (response) => response.json()
+    )
+
+    return data
+  }
+
+  const [serverData, setServerData] = useState<ServerGive>()
+
+  useEffect(() => {
+    const getServerApis = async () => {
+      const toGive:ServerGive = {
+        toGive: { name: 'a', age: 12, isDeveloper: true },
+      }
+      const data = await getData()
+      return data
+    }
+    const fetchData = async () => {
+      const data = await getServerApis()
+      if (data) {
+        setServerData(data)
+      }
+    }
+
+    fetchData()
+  }, [])
+```
+결론: 프론트엔드에서 객체 자료구조를 사용하는곳은 주로 서버에 데이터를 보낼때고 이떄는 인터페이스나 타입으로 지정해주는것이 좋을것 같다. 왜냐하면 해당 인터페이스만 고쳐주면 실제로 적요용하는데에서 확인이 가능하기 떄문에.
