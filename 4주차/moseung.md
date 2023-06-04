@@ -81,4 +81,21 @@ const [hasMiddle, setHasMiddle] = useState<boolean>(false)
   const moseung2 = { ...firstLast, ...(hasMiddle ? { middle: 's' } : {}) }
   const moseung3 = { ...firstLast, ...(hasMiddle ? { middle: 's' } : null) }
 ```
-위 코드처럼 
+위 코드처럼 빈객체나 null을 할당해주면 됩니다.<br>
+<img width="384" alt="image" src="https://github.com/FrontendStudySeoul/TypeScript/assets/103626175/2c3eaa70-6dd6-4b89-a444-96e2c9a21b8b">
+<img width="592" alt="image" src="https://github.com/FrontendStudySeoul/TypeScript/assets/103626175/d1ecdb9c-00c5-4c7c-8f17-f0d8f6f97923">
+
+#### 여러 속성 추가하기
+```tsx
+const [hasDates, setHasDates] = useState<boolean>(false)
+  const nameTitle = { name: 'korea', title: '살기좋은' }
+  const korea = {
+    ...nameTitle,
+    ...(hasDates ? { start: -2589, end: -2566 } : {}),
+  }
+  useEffect(() => {
+    setHasDates(true)
+  }, [])
+  console.log(korea.start)
+  //만약 hasDates가 false라면 korea.start는 undefined를 내뱉습니다.
+```
