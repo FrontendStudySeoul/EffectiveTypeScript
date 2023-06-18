@@ -61,4 +61,13 @@ GraphQL 처럼 자체적인 타입이 정의된 API에서 잘 동작한다. 쿼�
 #### Postman
 
 <img width="548" alt="image" src="https://github.com/FrontendStudySeoul/TypeScript/assets/103626175/31b84f72-3ec1-4c96-bf7b-f196fb150c88">
-[실제로 살펴보기]([https://nginx-nginx-883524lbvylaj6.gksl2.cloudtype.app/api/swagger-ui/#/member-controller/oauthLoginUsingPOST](https://documenter.getpostman.com/view/14876606/2s935iu6Hm#9b2af9a7-1195-4c5f-9010-2a0421b92cd1)https://documenter.getpostman.com/view/14876606/2s935iu6Hm#9b2af9a7-1195-4c5f-9010-2a0421b92cd1)
+<br>
+
+[실제로 살펴보기](https://documenter.getpostman.com/view/14876606/2s935iu6Hm#9b2af9a7-1195-4c5f-9010-2a0421b92cd1)
+
+#### 백엔드랑 같이 미리 스키마 생성하기
+우리가 프론트엔드 개발자로서 실제로 프론트엔드 개발하기 위해 책의 내용처럼 인터페이스를 보고 타입을 지정해서 개발해야하며, 실제로 작업하기전에 백엔드 개발자와 미리 스키마에 대한 협의를 하고 개발하면 좋을것 같다.
+#### 맞추지 않으면 생기는 문제
+snakeCase, cammelCase 혹은 idx, index 등등 실제로 작업하다보면 똑같은 값임에도 idx, index로 이름이 달라 혼동을 야기할 수 있기에 백엔드랑 미리 협의해서 데이터에 대한 명세를 미리 맞추면 좋다.
+#### Swagger나 Postman 사용하기
+그래서 위와 같이 생성했다면 앞서 설명했던 Swagger나 Postman 같은 어플리케이션을 사용해서 인터페이스에 대한 소통을 진행한다.
