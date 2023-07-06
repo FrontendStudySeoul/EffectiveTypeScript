@@ -65,4 +65,23 @@
     <td><a href="https://github.com/FrontendStudySeoul/TypeScript/blob/main/6%EC%A3%BC%EC%B0%A8/damgom.md">[담곰] any 다루기</a></td>
   </tr>
   <tr><td><a href="https://github.com/FrontendStudySeoul/TypeScript/blob/main/6%EC%A3%BC%EC%B0%A8/jerry.md">[제리] 아이템 41 - any의 진화를 이해하기</a></td></tr>
+	<tr>
+    <td rowspan="6">8주차</td>
+    <td><a href="https://github.com/FrontendStudySeoul/TypeScript/blob/main/8%EC%A3%BC%EC%B0%A8/damgom.md">[담곰] 아이템 49 - 콜백에서 this에 대한 타입 제공하기</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FrontendStudySeoul/TypeScript/blob/main/8%EC%A3%BC%EC%B0%A8/hardy.md">[하디] 아이템 51 - 의존성 분리를 위해 미러 타입 사용하기
+</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FrontendStudySeoul/TypeScript/blob/main/8%EC%A3%BC%EC%B0%A8/hodun.md">[호둔] 아이템 47 - 공개 API에 등장하는 모든 타입을 익스포트하기
+</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FrontendStudySeoul/TypeScript/blob/main/8%EC%A3%BC%EC%B0%A8/jerry.md">[제리] 아이템 52 - 테스팅 타입의 함정에 주의하기</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/FrontendStudySeoul/TypeScript/blob/main/8%EC%A3%BC%EC%B0%A8/moseung.md">[모승] 아이템 48 - API 주석에 TSDoc 사용하기
+</a></td>
+  </tr>
 </table>
