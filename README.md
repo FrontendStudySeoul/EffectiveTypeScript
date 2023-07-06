@@ -66,6 +66,42 @@
   </tr>
   <tr><td><a href="https://github.com/FrontendStudySeoul/TypeScript/blob/main/6%EC%A3%BC%EC%B0%A8/jerry.md">[제리] 아이템 41 - any의 진화를 이해하기</a></td></tr>
 	<tr>
+<tr>
+          <td rowSpan="5">7주차</td>
+          <td>
+            <a href="https://github.com/FrontendStudySeoul/TypeScript/blob/main/7%EC%A3%BC%EC%B0%A8/moseung.md">
+              [모승] 아이템 42 - 모르는 타입의 값에는 any 대신 unknown을 사용하기
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://github.com/FrontendStudySeoul/TypeScript/blob/main/7%EC%A3%BC%EC%B0%A8/jerry.md">
+              [제리] 아이템 44 - 타입 커버리지를 추적하여 타입 안정성 유지하기
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://github.com/FrontendStudySeoul/TypeScript/blob/main/7%EC%A3%BC%EC%B0%A8/hodun.md">
+              [호둔] 아이템 45 - devDependencies에 typescript와 @types 추가하기
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://github.com/FrontendStudySeoul/TypeScript/blob/main/7%EC%A3%BC%EC%B0%A8/hardy.md">
+              [하디] 아이템 42 - 모르는 타입의 값에는 any 대신 unknown을 사용하기
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://github.com/FrontendStudySeoul/TypeScript/blob/main/7%EC%A3%BC%EC%B0%A8/damgom.md">
+              [담곰] 아이템 46 - 타입 선언과 관련된 세 가지 버전 이해하기
+            </a>
+          </td>
+        </tr>
     <td rowspan="6">8주차</td>
     <td><a href="https://github.com/FrontendStudySeoul/TypeScript/blob/main/8%EC%A3%BC%EC%B0%A8/damgom.md">[담곰] 아이템 49 - 콜백에서 this에 대한 타입 제공하기</a></td>
   </tr>
